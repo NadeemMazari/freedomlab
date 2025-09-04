@@ -1,36 +1,31 @@
 [build]
-  publish = "dist"
   command = "npm run build"
+  publish = "dist"
 
+# Default envs (fallback if not overridden)
 [build.environment]
   NODE_VERSION = "18"
 
-# ----------------------
-# Production (main branch)
-# ----------------------
+# Production branch (main/master)
 [context.production]
   command = "npm run build"
+  publish = "dist"
   [context.production.environment]
     VITE_SUPABASE_URL = "https://yrnrssdwxdxoiblotpnl.supabase.co"
     VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlybnJzc2R3eGR4b2libG90cG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0MzE1MjEsImV4cCI6MjA3MjAwNzUyMX0.YMo2K3mqhN7jfoZOUCgFQk8Me4h0IdaGl1sI2xnQXD8"
     VITE_STRIPE_PUBLISHABLE_KEY = "pk_live_51RipKqDn6VTzl81boguXyM7ByLKZHgoOKw4eQtyhdj936V8y8mXOkFQduYXR09kNzNQXXYOOYvRAeAvOLRXBU7q800zjj4RAbt"
-    NODE_ENV = "production"
 
-# ----------------------
-# Staging (staging branch)
-# ----------------------
+# Staging branch
 [context.staging]
   command = "npm run build"
+  publish = "dist"
   [context.staging.environment]
     VITE_SUPABASE_URL = "https://yrnrssdwxdxoiblotpnl.supabase.co"
     VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlybnJzc2R3eGR4b2libG90cG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0MzE1MjEsImV4cCI6MjA3MjAwNzUyMX0.YMo2K3mqhN7jfoZOUCgFQk8Me4h0IdaGl1sI2xnQXD8"
     VITE_STRIPE_PUBLISHABLE_KEY = "pk_live_51RipKqDn6VTzl81boguXyM7ByLKZHgoOKw4eQtyhdj936V8y8mXOkFQduYXR09kNzNQXXYOOYvRAeAvOLRXBU7q800zjj4RAbt"
-    NODE_ENV = "staging"
 
-# ----------------------
-# Redirects (SPA support)
-# ----------------------
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# Deploy previews (PRs)
+[context.deploy-preview.environment]
+  VITE_SUPABASE_URL = "https://yrnrssdwxdxoiblotpnl.supabase.co"
+  VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlybnJzc2R3eGR4b2libG90cG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0MzE1MjEsImV4cCI6MjA3MjAwNzUyMX0.YMo2K3mqhN7jfoZOUCgFQk8Me4h0IdaGl1sI2xnQXD8"
+  VITE_STRIPE_PUBLISHABLE_KEY = "pk_live_51RipKqDn6VTzl81boguXyM7ByLKZHgoOKw4eQtyhdj936V8y8mXOkFQduYXR09kNzNQXXYOOYvRAeAvOLRXBU7q800zjj4RAbt"
