@@ -9,7 +9,7 @@
 # Production (main branch)
 # ----------------------
 [context.production]
-  command = "npm run build:prod"
+  command = "npm run build"
   [context.production.environment]
     VITE_SUPABASE_URL = "https://yrnrssdwxdxoiblotpnl.supabase.co"
     VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlybnJzc2R3eGR4b2libG90cG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0MzE1MjEsImV4cCI6MjA3MjAwNzUyMX0.YMo2K3mqhN7jfoZOUCgFQk8Me4h0IdaGl1sI2xnQXD8"
@@ -20,7 +20,7 @@
 # Staging (staging branch)
 # ----------------------
 [context.staging]
-  command = "npm run build:staging"
+  command = "npm run build"
   [context.staging.environment]
     VITE_SUPABASE_URL = "https://yrnrssdwxdxoiblotpnl.supabase.co"
     VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlybnJzc2R3eGR4b2libG90cG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0MzE1MjEsImV4cCI6MjA3MjAwNzUyMX0.YMo2K3mqhN7jfoZOUCgFQk8Me4h0IdaGl1sI2xnQXD8"
