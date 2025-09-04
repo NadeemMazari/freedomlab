@@ -5,31 +5,31 @@
 [build.environment]
   NODE_VERSION = "18"
 
-[[headers]]
-  for = "/*.js"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
+# ----------------------
+# Production (main branch)
+# ----------------------
+[context.production]
+  command = "npm run build:prod"
+  [context.production.environment]
+    VITE_SUPABASE_URL = "https://yrnrssdwxdxoiblotpnl.supabase.co"
+    VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlybnJzc2R3eGR4b2libG90cG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0MzE1MjEsImV4cCI6MjA3MjAwNzUyMX0.YMo2K3mqhN7jfoZOUCgFQk8Me4h0IdaGl1sI2xnQXD8"
+    VITE_STRIPE_PUBLISHABLE_KEY = "pk_live_51RipKqDn6VTzl81boguXyM7ByLKZHgoOKw4eQtyhdj936V8y8mXOkFQduYXR09kNzNQXXYOOYvRAeAvOLRXBU7q800zjj4RAbt"
+    NODE_ENV = "production"
 
-[[headers]]
-  for = "/*.mjs"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
+# ----------------------
+# Staging (staging branch)
+# ----------------------
+[context.staging]
+  command = "npm run build:staging"
+  [context.staging.environment]
+    VITE_SUPABASE_URL = "https://yrnrssdwxdxoiblotpnl.supabase.co"
+    VITE_SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InlybnJzc2R3eGR4b2libG90cG5sIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTY0MzE1MjEsImV4cCI6MjA3MjAwNzUyMX0.YMo2K3mqhN7jfoZOUCgFQk8Me4h0IdaGl1sI2xnQXD8"
+    VITE_STRIPE_PUBLISHABLE_KEY = "pk_live_51RipKqDn6VTzl81boguXyM7ByLKZHgoOKw4eQtyhdj936V8y8mXOkFQduYXR09kNzNQXXYOOYvRAeAvOLRXBU7q800zjj4RAbt"
+    NODE_ENV = "staging"
 
-[[headers]]
-  for = "/assets/*.js"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
-
-[[headers]]
-  for = "/assets/*.mjs"
-  [headers.values]
-    Content-Type = "application/javascript; charset=utf-8"
-
-[[headers]]
-  for = "/*.css"
-  [headers.values]
-    Content-Type = "text/css; charset=utf-8"
-
+# ----------------------
+# Redirects (SPA support)
+# ----------------------
 [[redirects]]
   from = "/*"
   to = "/index.html"
