@@ -183,7 +183,7 @@ export const Home: React.FC = () => {
           <div className="text-center mb-8 sm:mb-12">
             <h2 className="text-base text-primary-950 font-semibold tracking-wide uppercase">How It Works</h2>
             <p className="mt-2 text-2xl leading-8 font-bold tracking-tight text-gray-900 sm:text-3xl md:text-4xl">
-              See TestiFlow in Action 
+              See TestiFlow in Action ------
             </p>
             <p className="mt-4 max-w-2xl text-base sm:text-lg md:text-xl text-gray-500 mx-auto">
               From creation to showcase - watch how easy it is to manage testimonials
